@@ -1,0 +1,80 @@
+.d-flex {
+  width: 280px;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.d-flex div {
+  padding-top: 230px;
+}
+
+.d-flex#img {
+  width: 90px;
+  height: 90px;
+  display: block;
+
+  border-radius: 50%;
+  object-fit: cover;
+  filter: drop-shadow(2px 3px 6px #121212);
+  -webkit-filter: drop-shadow(2px 3px 6px #121212);
+}
+
+.d-flex a {
+  display: block;
+  padding: 16px;
+  display: flex;
+  text-decoration: none;
+  color: white;
+  flex-direction: row;
+  align-items: center;
+  transition: ease-in-out 0.4s;
+}
+
+.d-flex a svg {
+  margin-right: 0.5rem;
+}
+
+.div a:hover {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  div.content {
+    margin-left: 0;
+  }
+  .sidebar a {
+    float: left;
+  }
+
+  .sidebar div {
+    display: none;
+  }
+
+  .sidebar a svg {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+
+  .sidebar a svg {
+    display: none;
+  }
+}

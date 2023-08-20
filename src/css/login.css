@@ -1,0 +1,38 @@
+.main {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form {
+  background-color: #46a67b;
+  border: 2px solid rgb(170, 170, 170);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 14px 50px rgba(32, 33, 49, 0.2);
+  color: white;
+}
+
+#img {
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo {
+  align-items: center;
+  text-align: center;
+}
+
+.form-floating {
+  color: rgb(2, 55, 16);
+}
+
+.error-text {
+  padding-top: 10px;
+  color: rgb(50, 75, 43);
+  font-weight: bold;
+}
