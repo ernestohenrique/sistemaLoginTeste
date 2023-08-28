@@ -13,7 +13,9 @@ export default function Header() {
   const { user } = useContext(AuthContext);
   return (
     <div className="sidebar">
-      <div>
+      <div className="sidebar-top">
+        <span className="tituloSistema">Sistema Clínica</span>
+
         <Image
           id="img"
           //faz uma comparação se user é igual a null, caso contrário mostra user.avatarUrl

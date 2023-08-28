@@ -1,5 +1,4 @@
 .container {
-  display: flex;
   background-color: #f8f8f8;
   border-radius: 5px;
   padding: 0.8em;
@@ -33,12 +32,16 @@
   transform: scale(1.4);
 }
 
-.form-profile #img {
+#img {
   margin-bottom: 1em;
   border-radius: 50%;
   object-fit: cover;
 }
 
+.form-profile input:disabled {
+  cursor: not-allowed;
+}
+/*
 .form-profile label {
   margin-bottom: 0.5em;
   font-size: 1.4em;
@@ -72,3 +75,4 @@ select {
   justify-content: center;
   align-items: center;
 }
+*/

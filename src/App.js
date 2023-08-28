@@ -6,9 +6,11 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
-import { Dashboard } from "./pages/dashboard";
+import { Dashboard } from "./pages/Dashboard/dashboard";
 import Profile from "./pages/Profile/profile";
 import Customers from "./pages/Customers/customers";
+import Schedule from "./pages/Schedule/schedule";
+import New from "./pages/New/new";
 
 import Private from "./private/Private";
 
@@ -28,6 +30,8 @@ function App() {
                 <Route exact path="/" element={<Login />} />
                 <Route path="/sign-in" element={<Login />} />
                 <Route path="/sign-up" element={<SignUp />} />
+                <Route path="/schedule" element={<Schedule />} />
+
                 <Route
                   path="/dashboard"
                   element={
@@ -36,6 +40,16 @@ function App() {
                     </Private>
                   }
                 />
+
+                <Route
+                  path="/customers"
+                  element={
+                    <Private>
+                      <Customers />
+                    </Private>
+                  }
+                />
+
                 <Route
                   path="/profile"
                   element={
@@ -44,11 +58,30 @@ function App() {
                     </Private>
                   }
                 />
+
                 <Route
-                  path="/customers"
+                  path="/schedule"
                   element={
                     <Private>
-                      <Customers />
+                      <Schedule />
+                    </Private>
+                  }
+                />
+
+                <Route
+                  path="/new"
+                  element={
+                    <Private>
+                      <New />
+                    </Private>
+                  }
+                />
+
+                <Route
+                  path="/new/:id"
+                  element={
+                    <Private>
+                      <New />
                     </Private>
                   }
                 />

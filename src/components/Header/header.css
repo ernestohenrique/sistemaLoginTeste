@@ -1,29 +1,31 @@
 .sidebar {
   width: 200px;
+  height: 100%;
+  overflow: auto;
   margin: 0;
   padding: 0;
   background-color: #181c2e;
   position: fixed;
-  height: 100%;
-  overflow: auto;
 }
 
-.sidebar div {
-  background: url("../../img/avatar/fundoImg.jpg");
-  background-color: #181c2e;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 150px;
+.sidebar-top {
+  height: 200px;
+  margin: 0;
+  padding-top: 10px;
+  background-color: #123101;
 }
 
-.sidebar div {
-  padding-top: 30px;
+.tituloSistema {
+  margin: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  padding-bottom: 30px;
 }
-
 .sidebar #img {
   width: 90px;
-  height: auto;
+  height: 90px;
   display: block;
   margin: auto;
   border-radius: 50%;

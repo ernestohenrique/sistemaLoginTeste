@@ -69,7 +69,7 @@ export default function Login() {
     <main className="main">
       <form onSubmit={handleSignIn} className="form">
         <div className="m-4">
-          <Image src={logo} alt="Logo Clínica" id="img"></Image>
+          <Image src={logo} alt="Logo Clínica" id="imgLogin"></Image>
         </div>
         <h5 className="titulo">ENTRAR NO SISTEMA</h5>
 

@@ -1,0 +1,144 @@
+.botoes {
+  padding-bottom: 20px;
+  display: flex;
+
+  /*justify-content: flex-end;*/
+}
+.btn {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  padding: 0.375rem 0.75rem;
+  line-height: 1.5;
+  text-decoration: none;
+
+  margin: 0 5px;
+}
+
+.btninfor {
+  background-color: #41c688;
+}
+
+.btnedit {
+  background-color: #198754;
+}
+
+.btnPagina {
+  background-color: #518548;
+  color: white;
+  text-decoration: none;
+}
+
+.btnovochamado {
+  text-decoration: none;
+  color: #fff; /* Define a cor do texto como branca */
+  padding: 0; /* Remove o padding do botão */
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: 0.5em 0 0.75em;
+}
+
+table tr {
+  padding: 0.35em;
+}
+
+table th,
+table td {
+  padding: 0.62em;
+  text-align: center;
+}
+
+table th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+table td .action {
+  border: 0;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 13px;
+}
+
+table td .action svg {
+  vertical-align: middle;
+}
+
+table td .badge {
+  padding: 3px;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.spanChamados {
+  margin: 2em 0;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.page-link {
+  background-color: #198754;
+}
+
+.textoBusca {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .teste {
+    display: block;
+    align-items: center;
+  }
+
+  .btn {
+    font-size: 12px;
+    padding: 5px 15px;
+  }
+
+  .fi {
+    size: 15px;
+  }
+
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.6em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}

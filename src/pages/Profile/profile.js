@@ -7,7 +7,7 @@ import { Image } from "react-bootstrap";
 import avatar from "../../img/avatar/avatarUser.png";
 import { AuthContext } from "../../contexts/auth";
 
-import { db, storage } from "../../services/firebaseConnection";
+import { db /*storage*/ } from "../../services/firebaseConnection";
 import { doc, updateDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes, getStorage } from "firebase/storage";
 
@@ -85,77 +85,6 @@ export default function Profile() {
     }
   }
 
-  //----
-
-  /*
-  async function handleUpload() {
-    console.log("Teste 1");
-    const currentUid = user.uid;
-    const storage = getStorage();
-
-    const uploadRef = ref(storage, `images/${currentUid}/${imageAvatar.name}`);
-    console.log("Teste 2");
-    const uploadTask = uploadBytes(uploadRef, imageAvatar).then(() => {
-      getDownloadURL(imageAvatar.ref).then(async (downLoadURL) => {
-        let urlFoto = downLoadURL;
-        console.log("Teste 3");
-        const docRef = doc(db, "user", user.uid);
-        await updateDoc(docRef, {
-          avatarUrl: urlFoto,
-          nome: nome,
-        }).then(() => {
-          let data = {
-            ...user,
-            nome: nome,
-            avatarUrl: urlFoto,
-          };
-          console.log("Teste 4");
-          setUser(data);
-          storageUser(data);
-          toast.success("Atualizado com Sucesso!");
-        });
-      });
-    });
-  }
-
-  //_____________________
-
-  async function handleUpload() {
-    console.log("Teste 1");
-    try {
-      const currentUid = user.uid;
-      const uploadRef = ref(
-        storage,
-        `images/${currentUid}/${imageAvatar.name}`
-      );
-      console.log("Teste 2");
-      const snapshot = await uploadBytes(uploadRef, imageAvatar);
-      const downLoadURL = await getDownloadURL(snapshot.ref);
-      console.log("Teste 3");
-      const docRef = doc(db, "user", user.uid);
-      await updateDoc(docRef, {
-        avatarUrl: downLoadURL,
-        nome: nome,
-      });
-      console.log("Teste 4");
-      const updatedUser = {
-        ...user,
-        nome: nome,
-        avatarUrl: downLoadURL,
-      };
-      console.log("Teste 5");
-      setUser(updatedUser);
-      storageUser(updatedUser);
-
-      toast.success("Atualizado com Sucesso!");
-    } catch (error) {
-      console.error("Erro durante o processo de upload:", error);
-      // Tratar o erro, se necessário
-    }
-  }
-
-  //____________________
-  */
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -189,47 +118,77 @@ export default function Profile() {
 
         <div className="container">
           <form className="form-profile" onSubmit={handleSubmit}>
-            <label className="label-avatar">
-              <span>
-                <FiUpload color="#fff" size={25}></FiUpload>
-              </span>
-              <input type="file" accept="image/*" onChange={handleFile}></input>
-              <br />
-              {avatarUrl === null ? (
-                <Image
-                  id="img"
-                  src={avatar}
-                  alt="Foto do perfil"
-                  width={250}
-                  height={250}
-                ></Image>
-              ) : (
-                <Image
-                  id="img"
-                  src={avatarUrl}
-                  alt="Foto do perfil"
-                  width={250}
-                  height={250}
-                ></Image>
-              )}
-            </label>
-
-            <label>Nome</label>
-            <input
-              type="text"
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
-            ></input>
-
-            <label>Email</label>
-            <input type="text" value={email} disabled={true}></input>
-
-            <button type="submit">Salvar</button>
+            <div className="row">
+              <div className="col-md-3">
+                <label className="label-avatar">
+                  <span>
+                    <FiUpload color="#fff" size={25}></FiUpload>
+                  </span>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleFile}
+                  ></input>
+                  <br />
+                  {avatarUrl === null ? (
+                    <Image
+                      id="img"
+                      src={avatar}
+                      alt="Foto do perfil"
+                      width={250}
+                      height={250}
+                    ></Image>
+                  ) : (
+                    <Image
+                      id="img"
+                      src={avatarUrl}
+                      alt="Foto do perfil"
+                      width={250}
+                      height={250}
+                    ></Image>
+                  )}
+                </label>
+              </div>
+              <div className="col-md-9">
+                <div className="row">
+                  <div className="col-md-6">
+                    <label>Nome</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={nome}
+                      onChange={(e) => setNome(e.target.value)}
+                    ></input>
+                  </div>
+                  <div className="col-md-6">
+                    <label>Email</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={email}
+                      disabled={true}
+                    ></input>
+                  </div>
+                </div>
+                <div>
+                  <br />
+                  <button
+                    className="btn btn-success btn-lg btn-block"
+                    type="submit"
+                  >
+                    Salvar
+                  </button>
+                </div>
+              </div>
+            </div>
           </form>
         </div>
 
         <div className="container">
-          <button className="logout-btn" onClick={() => logout()}>
+          <button
+            className="btn btn-primary btn-lg btn-block"
+            onClick={() => logout()}
+          >
             Sair
           </button>
         </div>

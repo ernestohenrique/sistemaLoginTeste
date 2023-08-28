@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "clinica-8571b"
-  }
+    "default": "sistema-clinica-97e77",
+    "sistemaClinica": "sistema-clinica-97e77",
+    "sistemaMP": "sistema-clinica-97e77"
+  },
+  "targets": {},
+  "etags": {}
 }
